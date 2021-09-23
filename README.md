@@ -1,2 +1,2 @@
-# web-visualizations-challenge
+# plotly-challenge
  
