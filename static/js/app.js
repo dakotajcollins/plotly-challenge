@@ -31,6 +31,7 @@ function optionChanged(ID){
     var otu = otus.map(item => `OTU: ${item}`)
     var labels =  id2[0].otu_labels.slice(0,10).reverse()
 
+    // bar chart
 
     let trace1 = {
       x: values,
@@ -49,6 +50,7 @@ function optionChanged(ID){
   
     Plotly.newPlot("bar", traceData,layout);
 
+    // bubble graph
 
     var all_values = id2[0].sample_values
     var all_otu = id2[0].otu_ids
