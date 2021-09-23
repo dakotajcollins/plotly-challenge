@@ -79,7 +79,7 @@ function optionChanged(ID){
     Plotly.newPlot('bubble', bub, layout2);
 
 
-    // Guage viz
+    // Bonus Guage viz
 
     var scrub = indv_info[0].wfreq
 
