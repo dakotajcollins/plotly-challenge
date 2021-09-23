@@ -77,6 +77,51 @@ function optionChanged(ID){
     };
     
     Plotly.newPlot('bubble', bub, layout2);
+
+
+    // Guage viz
+
+    var scrub = indv_info[0].wfreq
+
+    var gauge = [
+      {
+        type: "indicator",
+        mode: "gauge+number",
+        value: scrub,
+        title: { text: "Scrubs per Week", font: { size: 16 } },
+        gauge: {
+          axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
+          bar: { color: "red" },
+          bgcolor: "white",
+          borderwidth: 2,
+          bordercolor: "gray",
+          steps: [
+            { range: [0, 1], color: "white" },
+            { range: [1, 2], color: "aliceblue" },
+            { range: [2, 3], color: "lightcyan" },
+            { range: [3, 4], color: "lightblue" },
+            { range: [4, 5], color: "cyan" },
+            { range: [5, 6], color: "darkturquoise" },
+            { range: [6, 7], color: "royalblue" },
+            { range: [7, 8], color: "mediumblue" },
+            { range: [8, 9], color: "navy" }
+          ],
+          threshold: {
+            line: { color: "red", width: 3 },
+            thickness: 0.75,
+            value: scrub
+          }
+        }
+      }
+    ];
+    
+    var layout3 = {
+      title: "Belly Button Washing Frequency",
+      paper_bgcolor: "lavender",
+      font: { color: "darkblue", family: "Arial", size: 20,  fontWeight: "bold"}
+    };
+    
+    Plotly.newPlot('gauge', gauge, layout3);
   
   });
 }
